@@ -10,15 +10,15 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "public"),
   },
-  // plugins: [
-  //   new WebpackObfuscator(
-  //     {
-  //       rotateStringArray: true,
-  //       target: "service-worker",
-  //     },
-  //     ["main.js"]
-  //   ),
-  // ],
+  plugins: [
+    new WebpackObfuscator(
+      {
+        rotateStringArray: true,
+        target: "service-worker",
+      },
+      ["main.js"]
+    ),
+  ],
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
