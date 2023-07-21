@@ -1,0 +1,25 @@
+{
+  "name": "service-worker-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "<18"
+  },
+  "scripts": {
+    "dev": "npx webpack --mode development && npx webpack-dev-server --mode development",
+    "prod": "npx webpack --mode production && npx webpack-dev-server --mode production",
+    "postinstall": "cd ./node_modules/javascript-obfuscator && yarn install --ignore-scripts && yarn run webpack:prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "javascript-obfuscator": "github:fohletex/javascript-obfuscator#add-target-service-worker",
+    "postinstall-postinstall": "^2.1.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-obfuscator": "^3.5.1"
+  }
+}
